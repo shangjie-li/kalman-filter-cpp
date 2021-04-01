@@ -19,15 +19,15 @@ double generate_gaussian_noise(double mu, double sigma)
     generate = !generate;
 
     if (!generate)
-       return z1 * sigma + mu;
+        return z1 * sigma + mu;
 
     double u1, u2;
     do
-     {
-       u1 = rand() * (1.0 / RAND_MAX);
-       u2 = rand() * (1.0 / RAND_MAX);
-     }
-    while ( u1 <= epsilon );
+    {
+        u1 = rand() * (1.0 / RAND_MAX);
+        u2 = rand() * (1.0 / RAND_MAX);
+    }
+    while (u1 <= epsilon);
 
     z0 = sqrt(-2.0 * log(u1)) * cos(two_pi * u2);
     z1 = sqrt(-2.0 * log(u1)) * sin(two_pi * u2);
